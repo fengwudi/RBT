@@ -129,7 +129,7 @@ if __name__ == '__main__':
         torch.cuda.manual_seed_all(seed)
     set_seed(2026)
     
-    for repeat in range(1):
+    for repeat in range(5):
         
         early_stop = 0
         gnn_dim_node = 0 if node_feats is None else node_feats.shape[1]
