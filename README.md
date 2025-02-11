@@ -36,10 +36,10 @@ ETC:
 > python train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
 
 RBT w/o PRES:
-> python ours_train.py --data WIKI --config config/TGN.yml --method dynamic --gpu 0
+> python ours_train.py --data WIKI --config config/TGN.yml--gpu 0
 
 RBT w PRES:
-> python ours_train.py --data WIKI --config config/TGN.yml --method dynamic --gpu 0 --use_pres
+> python ours_train.py --data WIKI --config config/TGN.yml --gpu 0 --use_pres
 
 RBT:
-> python ours_train.py --data WIKI --config config/TGN.yml --method dynamic --batch 1000 --gpu 0 --use_pres --pres_time
+> python ours_train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0 --use_pres --pres_time
