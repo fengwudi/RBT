@@ -1,5 +1,4 @@
-# RBT
-Same environment as ETC
+# RBT: Efficient Dynamic Graphs Learning with Refined Batch Parallel Training
 ## Requirements
 - python >= 3.6.13
 - pytorch >= 1.8.1
