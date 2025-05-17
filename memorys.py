@@ -444,11 +444,7 @@ class Filter(nn.Module):
         self.count = torch.zeros((self.n_nodes), 1).cuda()
         self.incretment = torch.zeros(self.n_nodes, self.memory_dimension).cuda()
         self.incretment_sqr = torch.zeros(self.n_nodes, self.memory_dimension).cuda()
-        # self.count = nn.Parameter(torch.zeros((self.n_nodes)).cuda(),requires_grad=False)
-        # self.incretment = nn.Parameter(torch.zeros((self.n_nodes, self.memory_dimension)).cuda(),
-        #                            requires_grad=False)
-        # self.incretment_sqr = nn.Parameter(torch.zeros((self.n_nodes, self.memory_dimension)).cuda(),
-        #                            requires_grad=False)
+
     def normalization(self):
         if not (self.incretment.max().item() == 0):
             self.incretment -= self.incretment.min()
@@ -460,7 +456,7 @@ class Filter(nn.Module):
 
     def get_incretment(self, node_idxs):
         node_idxs = node_idxs.type(torch.long).to(self.incretment.device)
-        return self.incretment[node_idxs, :]/torch.clamp(self.count[node_idxs,:],1)
+        return self.incretment[node_idxs, :]
 
     def get_incretment_sqr(self, node_idxs):
         node_idxs = node_idxs.type(torch.long).to(self.incretment.device)

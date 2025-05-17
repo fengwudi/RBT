@@ -20,26 +20,26 @@ We use seven datasets in the paper: Wikipedia, Reddit, MOOC, LastFM, Flights, Wi
 
 For Wikipedia, Reddit, MOOC, LastFM, they can be downloaded from AWS S3 bucket using the `down.sh` script. 
 
-For Flights Datasets, you can install from https://github.com/fpour/DGB, and process it using `flights2tgl.py`, then use `gen_graph.py` to generate T-CSR format.
+For Flights, you can install from https://github.com/fpour/DGB, and process it using `flights2tgl.py`, then use `gen_graph.py` to generate T-CSR format.
 
 For WIKITALK and STACKOVERFLOW, they can be downloaded from http://snap.stanford.edu/data/wiki-talk-temporal.html and https://snap.stanford.edu/data/sx-stackoverflow.html respectively.
-Note that for WIKITALK and STACKOVERFLOW, they need to be preprocessed after obtaining the raw data from the links above. For example:
+Note that for WIKITALK and STACKOVERFLOW datasets, they need to be preprocessed after obtaining the raw data from the links above. For example:
 > python preprocess.py --data \<NameOfDataset> --txt \<PathOfRawData>
 
 ## Usage
 Example Usage:
 
 TGL:
-> python test_train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
+> python tgl.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
 
 ETC:
-> python train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
+> python etc.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
 
 RBT w/o PRES:
-> python ours_train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
+> python rbt.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0
 
 RBT w PRES:
-> python ours_train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0 --use_pres
+> python rbt.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0 --use_pres
 
 RBT:
-> python ours_train.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0 --use_pres --pres_time
+> python rbt.py --data WIKI --config config/TGN.yml --batch 1000 --gpu 0 --use_pres --pres_time
